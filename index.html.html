@@ -158,34 +158,70 @@
             color: #fff;
             padding: 10px;
             border-radius: 5px;
-            display: none;
-            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
         }
 
         .contact-info p {
             margin: 0;
         }
 
+        .copy-button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
         aside a:hover .contact-info {
-            display: block;
+            display: flex;
+            opacity: 1;
+            flex-direction: column;
         }
     </style>
+
+    <!-- Adicionando a função JavaScript -->
+    <script>
+        function copyText(text) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+        }
+
+        function showAndHide(element) {
+            element.style.opacity = 1;
+            setTimeout(() => {
+                element.style.opacity = 0;
+            }, 1500); // Tempo em milissegundos, 1500 = 1,5 segundos
+        }
+    </script>
+
     <title>Portfólio Alex Christos Simonis</title>
 </head>
 
 <body>
 
     <aside>
-        <a href="#">
+        <a href="#" onclick="copyText('Alexsimonis21@gmail.com'); showAndHide(this.querySelector('.contact-info'));">
             <i class="fa fa-envelope"></i>Email
             <span class="contact-info">
                 <p>Meu email: Alexsimonis21@gmail.com</p>
+                <button class="copy-button" onclick="copyText('Alexsimonis21@gmail.com')">Copiar</button>
             </span>
         </a>
-        <a href="#">
+        <a href="#" onclick="copyText('+55119583-15173'); showAndHide(this.querySelector('.contact-info'));">
             <i class="fa fa-phone"></i>Telefone
             <span class="contact-info">
                 <p>Meu contato: +55119583-15173</p>
+                <button class="copy-button" onclick="copyText('+55119583-15173')">Copiar</button>
             </span>
         </a>
         <a href="https://www.linkedin.com/in/alex-christos-simonis-798026210" target="_blank">
@@ -194,7 +230,8 @@
         <a href="https://www.instagram.com/alexsimoniss" target="_blank">
             <i class="fa fa-instagram"></i>Instagram
         </a>
-        <a href="C:\Users\lelee\OneDrive\Área de Trabalho\Portfolio\Curriculo Alex Christos Simonis 2024.pdf.pdf" download="Curriculo_Alex_Christos_Simonis_2024" class="download-button" target="_blank">Baixar Currículo</a>
+        <a href="C:\Users\lelee\OneDrive\Área de Trabalho\Portfolio\Curriculo Alex Christos Simonis 2024.pdf.pdf"
+            download="Curriculo_Alex_Christos_Simonis_2024" class="download-button" target="_blank">Baixar Currículo</a>
     </aside>
 
     <section>
