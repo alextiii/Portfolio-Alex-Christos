@@ -315,6 +315,93 @@
             color: #3498db;
             text-align: center;
         }
+
+        @media (max-width: 768px) {
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid #333;
+            }
+
+            main {
+                margin-left: 0;
+                padding: 10px;
+                width: 100%;
+            }
+
+            header {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            header img {
+                width: 100px;
+                margin-bottom: 10px;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            section {
+                max-width: 100%;
+                margin: 10px 0;
+                padding: 10px;
+            }
+
+            .tecnologia-title {
+                font-size: 20px;
+            }
+
+            .skill img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .skill-bar {
+                height: 15px;
+            }
+
+            .skill-label {
+                font-size: 0.7em;
+            }
+
+            .skill-bar::before,
+            .skill-bar::after,
+            .skill-bar span:last-of-type {
+                font-size: 0.7em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            .tecnologia-title {
+                font-size: 18px;
+            }
+
+            .skill-label {
+                font-size: 0.6em;
+            }
+
+            .skill-bar::before,
+            .skill-bar::after,
+            .skill-bar span:last-of-type {
+                font-size: 0.6em;
+            }
+        }
     </style>
 
     <script>
