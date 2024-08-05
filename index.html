@@ -1,54 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: orange;
+            }
+        }
+
+        @keyframes move-to-position {
+            0% {
+                transform: translateX(var(--random-x)) translateY(var(--random-y));
+            }
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('Fundo.png') center/cover fixed no-repeat;
-            background-color: #3498db;
+            background: url('https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/vecteezy_wave-of-particles-on-blue-background-abstract-technology_5411624.jpg') center/cover fixed no-repeat;
             color: #fff;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         aside {
-            width: 10%;
+            width: 15%;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             border-right: 1px solid #333;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
             line-height: 1.5;
+            animation: move-to-position 2s ease forwards;
+            --random-x: calc(100vw * var(--random-factor));
+            --random-y: calc(100vh * var(--random-factor));
+            --random-factor: -1;
+            position: fixed;
+            height: 100%;
+        }
+
+        main {
+            margin-left: 15%;
+            padding: 20px;
+            flex-grow: 1;
         }
 
         header {
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
             padding: 50px 20px;
             color: #fff;
+            text-align: center;
+            flex-direction: column;
+            animation: move-to-position 2s ease forwards;
+            --random-x: calc(100vw * var(--random-factor));
+            --random-y: calc(100vh * var(--random-factor));
+            --random-factor: 1;
+        }
+
+        header img,
+        header div,
+        header h1,
+        header p {
+            animation: move-to-position 2s ease forwards;
+            --random-x: calc(100vw * var(--random-factor));
+            --random-y: calc(100vh * var(--random-factor));
+            --random-factor: -1;
         }
 
         header img {
             border-radius: 10%;
-            width: 200px;
-            height: 200px;
-            margin-right: 20px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            animation: move-to-position 2s ease forwards;
+            animation-fill-mode: forwards;
         }
 
         header div {
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
         header h1 {
@@ -59,52 +116,121 @@
             text-stroke: 1px black;
         }
 
-        header p {
-            font-size: 1.2em;
+        .typing-demo {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 4px solid;
+            animation: typing 4s steps(40, end), blink-caret .75s step-end 1;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             -webkit-text-stroke: 1px black;
             text-stroke: 1px black;
+            animation-fill-mode: forwards;
+        }
+
+        .golden-text {
+            color: gold;
         }
 
         section {
-            max-width: 90%;
+            max-width: 70%;
             margin: 20px auto;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            position: relative;
+            animation: move-to-position 2s ease forwards;
+            --random-x: calc(100vw * var(--random-factor));
+            --random-y: calc(100vh * var(--random-factor));
+            --random-factor: -1;
         }
 
         section h2 {
             color: #3498db;
         }
 
-        .projeto {
+        .skill-container {
             margin-bottom: 20px;
-            border: 1px solid #ddd;
-            padding: 10px;
-            background-color: #fff;
         }
 
-        #footer-img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            margin-top: 20px;
-        }
-
-        #experiencias-img {
-            width: 100%;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
-        .tecnologia-title {
-            text-align: center;
-            color: #3498db;
-            font-size: 1.5em;
+        .skill {
+            display: flex;
+            align-items: center;
             margin-bottom: 10px;
+        }
+
+        .skill img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+
+        .skill-bar {
+            flex-grow: 1;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-level {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+        }
+
+        .skill-level[data-level="advanced"] {
+            width: 100%;
+        }
+
+        .skill-level[data-level="intermediate"] {
+            width: 75%;
+        }
+
+        .skill-level[data-level="beginner"] {
+            width: 50%;
+        }
+
+        .skill-label {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 0.8em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .skill-bar::before {
+            content: 'Iniciante';
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8em;
+            color: #fff;
+        }
+
+        .skill-bar::after {
+            content: 'Intermediário';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.8em;
+            color: #fff;
+        }
+
+        .skill-bar span:last-of-type {
+            content: 'Avançado';
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.8em;
+            color: #fff;
         }
 
         a {
@@ -137,7 +263,6 @@
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            box-shadow: 0 0 30px rgba(243, 243, 245, 0);
             text-decoration: none;
             display: inline-block;
             transition: background-color 0.3s ease;
@@ -183,9 +308,15 @@
             opacity: 1;
             flex-direction: column;
         }
+
+        .tecnologia-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-align: center;
+        }
     </style>
 
-    <!-- Adicionando a função JavaScript -->
     <script>
         function copyText(text) {
             const tempInput = document.createElement('input');
@@ -202,6 +333,14 @@
                 element.style.opacity = 0;
             }, 1500); // Tempo em milissegundos, 1500 = 1,5 segundos
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll("header, header img, header div, header h1, header p, aside, section");
+            elements.forEach(element => {
+                element.style.setProperty('--random-x', `${Math.random() * 100 - 50}vw`);
+                element.style.setProperty('--random-y', `${Math.random() * 100 - 50}vh`);
+            });
+        });
     </script>
 
     <title>Portfólio Alex Christos Simonis</title>
@@ -230,22 +369,20 @@
         <a href="https://www.instagram.com/alexsimoniss" target="_blank">
             <i class="fa fa-instagram"></i>Instagram
         </a>
-        <a href="https://github.com/alextiii/Portfolio-Alex-Christos/raw/main/Curriculo%20Alex%20Christos%20Simonis%202024.pdf.pdf"
+        <a href="https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/Curriculo%20Alex%20Christos%20Simonis%202024.pdf"
             download="Curriculo_Alex_Christos_Simonis_2024" class="download-button">Baixar Currículo</a>
-
-
     </aside>
 
-    <section>
+    <main>
         <section id="sobre-mim">
             <header>
-                <img src="header.jpg.png" alt="Sua Foto">
+                <img src="https://github.com/alextiii/Portfolio-Alex-Christos/raw/main/foto%20perfil%20alex.jfif" alt="Sua Foto">
                 <div>
-                    <h1>Alex Christos Simonis</h1>
-                    <p>Business Intelligence, Process Automation</p>
+                    <h1 class="typing-demo">Alex Christos Simonis</h1>
+                    <p class="typing-demo golden-text">Business Intelligence, Process Automation</p>
                 </div>
             </header>
-            <h2>Sobre Mim</h2>
+            <h2 class="typing-demo">Sobre Mim</h2>
             <p>Sou um profissional de tecnologia com mais de 4 anos de experiência no campo. Minha jornada começou com a curiosidade e o desejo de entender como as coisas funcionam, o que rapidamente se transformou em uma paixão por desenvolver soluções tecnológicas inovadoras.</p>
 
             <p>Minha experiência abrange áreas como Business Intelligence (BI) e automação de processos, onde tenho trabalhado na análise de dados para fornecer insights valiosos para a tomada de decisões estratégicas. Ao longo dos anos, tive o privilégio de colaborar em projetos desafiadores que exigiram pensamento analítico, resolução de problemas e habilidades de comunicação eficazes.</p>
@@ -259,9 +396,57 @@
             <div class="tecnologia-title">
                 Tecnologia
             </div>
-            <img id="experiencias-img" src="experiencias.png" alt="Experiências">
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI">
+                <span>Power BI</span>
+                <div class="skill-bar">
+                    <div class="skill-level" data-level="advanced"></div>
+                    <span class="skill-label">Avançado</span>
+                </div>
+            </div>
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python">
+                <span>Python</span>
+                <div class="skill-bar">
+                    <div class="skill-level" data-level="intermediate"></div>
+                    <span class="skill-label">Avançado</span>
+                </div>
+            </div>
+            <div class="skill">
+                <img src="https://img.icons8.com/ios-filled/48/ffffff/database.png" alt="Database">
+                <span>Database</span>
+                <div class="skill-bar">
+                    <div class="skill-level" data-level="intermediate"></div>
+                    <span class="skill-label">Avançado</span>
+                </div>
+            </div>
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/office-365.png" alt="Office 365">
+                <span>Office 365</span>
+                <div class="skill-bar">
+                    <div class="skill-level" data-level="advanced"></div>
+                    <span class="skill-label">Avançado</span>
+                </div>
+            </div>
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML">
+                <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
+                <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
+                <div class="skill-bar">
+                    <div class="skill-level" data-level="intermediate"></div>
+                    <span class="skill-label">Avançado</span>
+                </div>
+            </div>
+            <div class="skill">
+                <img src="https://img.icons8.com/color/48/000000/google-cloud-platform.png" alt="Big Query">
+                <span>Big Query</span>
+                <div class="skill-bar">
+                    <div class="skill-level" data-level="intermediate"></div>
+                    <span class="skill-label">Avançado</span>
+                </div>
+            </div>
         </section>
-    </section>
+    </main>
 
 </body>
 
