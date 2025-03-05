@@ -9,86 +9,26 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
             background: url('https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/vecteezy_wave-of-particles-on-blue-background-abstract-technology_5411624.jpg') center/cover fixed no-repeat;
             color: #fff;
             display: flex;
         }
 
-        aside {
-            width: 15%;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-right: 1px solid #333;
-            position: fixed;
-            height: 100vh;
-            overflow-y: auto;
-        }
-
-        aside a {
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        aside i {
-            margin-right: 10px;
-        }
-
         main {
-            margin-left: 15%;
+            margin: auto;
             padding: 20px;
-            flex-grow: 1;
-        }
-
-        header {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        header img {
-            border-radius: 10%;
-            width: 150px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            width: 60%;
         }
 
         section {
-            max-width: 70%;
-            margin: 20px auto;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
         }
 
-        section h2 {
-            color: #3498db;
-        }
-
-        .download-button {
-            background-color: #fafafffb;
-            color: #111111;
-            padding: 10px 35px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-            font-family: 'Cursive', 'Brush Script MT', cursive;
-            margin-top: 5px;
-        }
-
-        .download-button:hover {
-            background-color: #c6c8c9;
+        .tecnologia-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
         }
 
         .skill {
@@ -106,7 +46,7 @@
         .skill-bar {
             flex-grow: 1;
             height: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             overflow: hidden;
             position: relative;
@@ -116,6 +56,17 @@
             height: 100%;
             border-radius: 10px;
             background: linear-gradient(90deg, #3498db, #2ecc71);
+            transition: width 1.5s ease-in-out;
+        }
+
+        .skill-label {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            line-height: 20px;
         }
     </style>
 </head>
@@ -123,14 +74,13 @@
 <body>
     <main>
         <section id="projetos">
-            <div class="tecnologia-title">
-                Tecnologia
-            </div>
+            <div class="tecnologia-title">Tecnologia</div>
             <div class="skill">
                 <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI">
                 <span>Power BI</span>
                 <div class="skill-bar">
                     <div class="skill-level" style="width: 100%;"></div>
+                    <span class="skill-label">Avançado</span>
                 </div>
             </div>
             <div class="skill">
@@ -138,6 +88,7 @@
                 <span>Python</span>
                 <div class="skill-bar">
                     <div class="skill-level" style="width: 85%;"></div>
+                    <span class="skill-label">Intermediário</span>
                 </div>
             </div>
             <div class="skill">
@@ -145,6 +96,7 @@
                 <span>Database</span>
                 <div class="skill-bar">
                     <div class="skill-level" style="width: 80%;"></div>
+                    <span class="skill-label">Intermediário</span>
                 </div>
             </div>
             <div class="skill">
@@ -152,6 +104,7 @@
                 <span>Office 365</span>
                 <div class="skill-bar">
                     <div class="skill-level" style="width: 95%;"></div>
+                    <span class="skill-label">Avançado</span>
                 </div>
             </div>
             <div class="skill">
@@ -160,6 +113,7 @@
                 <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
                 <div class="skill-bar">
                     <div class="skill-level" style="width: 75%;"></div>
+                    <span class="skill-label">Intermediário</span>
                 </div>
             </div>
             <div class="skill">
@@ -167,10 +121,10 @@
                 <span>Big Query</span>
                 <div class="skill-bar">
                     <div class="skill-level" style="width: 85%;"></div>
+                    <span class="skill-label">Intermediário</span>
                 </div>
             </div>
         </section>
     </main>
 </body>
-
 </html>
