@@ -72,6 +72,24 @@
         section h2 {
             color: #3498db;
         }
+
+        .download-button {
+            background-color: #fafafffb;
+            color: #111111;
+            padding: 10px 35px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            font-family: 'Cursive', 'Brush Script MT', cursive;
+            margin-top: 5px;
+        }
+
+        .download-button:hover {
+            background-color: #c6c8c9;
+        }
     </style>
 </head>
 
@@ -89,10 +107,7 @@
         <a href="https://www.instagram.com/alexsimoniss" target="_blank">
             <i class="fa fa-instagram"></i>Instagram
         </a>
-        <a href="https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/Curriculo%20Alex%20Christos%20Simonis%202025.pdf" 
-           download="Curriculo_Alex_Christos_Simonis_2025.pdf">
-           Baixar Currículo
-        </a>
+        <a href="#" id="download-curriculo" class="download-button">Baixar Currículo</a>
     </aside>
 
     <main>
@@ -100,12 +115,23 @@
             <header>
                 <img src="https://github.com/alextiii/Portfolio-Alex-Christos/raw/main/foto%20perfil%20alex.jfif" alt="Sua Foto">
                 <h1>Alex Christos Simonis</h1>
-                <p>Business Intelligence, Process Automation</p>
             </header>
             <h2>Sobre Mim</h2>
             <p>Sou um profissional de tecnologia com mais de 4 anos de experiência...</p>
         </section>
     </main>
+
+    <script>
+        document.getElementById("download-curriculo").addEventListener("click", function(event) {
+            event.preventDefault(); // Evita que o link abra a página do GitHub
+            const link = document.createElement("a");
+            link.href = "https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/Curriculo%20Alex%20Christos%20Simonis%202025.pdf";
+            link.download = "Curriculo_Alex_Christos_Simonis_2025.pdf"; // Define o nome do arquivo
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
 </body>
 
 </html>
