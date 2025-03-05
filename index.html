@@ -9,122 +9,138 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
             background: url('https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/vecteezy_wave-of-particles-on-blue-background-abstract-technology_5411624.jpg') center/cover fixed no-repeat;
             color: #fff;
             display: flex;
         }
 
-        main {
-            margin: auto;
+        aside {
+            width: 15%;
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
-            width: 60%;
+            border-right: 1px solid #333;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
         }
 
-        section {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .tecnologia-title {
-            font-size: 1.5em;
+        aside a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
             margin-bottom: 15px;
         }
 
-        .skill {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .skill img {
-            width: 32px;
-            height: 32px;
+        aside i {
             margin-right: 10px;
         }
 
-        .skill-bar {
+        main {
+            margin-left: 15%;
+            padding: 20px;
             flex-grow: 1;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
         }
 
-        .skill-level {
-            height: 100%;
-            border-radius: 10px;
-            background: linear-gradient(90deg, #3498db, #2ecc71);
-            transition: width 1.5s ease-in-out;
-        }
-
-        .skill-label {
-            position: absolute;
-            width: 100%;
+        header {
             text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            color: white;
-            line-height: 20px;
+            padding: 50px 20px;
+        }
+
+        header img {
+            border-radius: 10%;
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            max-width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        section h2 {
+            color: #3498db;
+        }
+
+        .download-button {
+            background-color: #fafafffb;
+            color: #111111;
+            padding: 10px 35px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            font-family: 'Cursive', 'Brush Script MT', cursive;
+            margin-top: 5px;
+        }
+
+        .download-button:hover {
+            background-color: #c6c8c9;
         }
     </style>
 </head>
 
 <body>
+    <aside>
+        <a href="mailto:Alexsimonis21@gmail.com">
+            <i class="fa fa-envelope"></i>Email: Alexsimonis21@gmail.com
+        </a>
+        <a href="tel:+5511958315173">
+            <i class="fa fa-phone"></i>Telefone: +55 11 95831-5173
+        </a>
+        <a href="https://www.linkedin.com/in/alex-christos-simonis-798026210" target="_blank">
+            <i class="fa fa-linkedin"></i>LinkedIn
+        </a>
+        <a href="https://www.instagram.com/alexsimoniss" target="_blank">
+            <i class="fa fa-instagram"></i>Instagram
+        </a>
+        <a href="#" id="download-curriculo" class="download-button">Baixar Currículo</a>
+    </aside>
+
     <main>
-        <section id="projetos">
-            <div class="tecnologia-title">Tecnologia</div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI">
-                <span>Power BI</span>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 100%;"></div>
-                    <span class="skill-label">Avançado</span>
-                </div>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python">
-                <span>Python</span>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 85%;"></div>
-                    <span class="skill-label">Intermediário</span>
-                </div>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/ios-filled/48/ffffff/database.png" alt="Database">
-                <span>Database</span>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 80%;"></div>
-                    <span class="skill-label">Intermediário</span>
-                </div>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/000000/office-365.png" alt="Office 365">
-                <span>Office 365</span>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 95%;"></div>
-                    <span class="skill-label">Avançado</span>
-                </div>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML">
-                <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
-                <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 75%;"></div>
-                    <span class="skill-label">Intermediário</span>
-                </div>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/000000/google-cloud-platform.png" alt="Big Query">
-                <span>Big Query</span>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 85%;"></div>
-                    <span class="skill-label">Intermediário</span>
-                </div>
-            </div>
+        <section id="sobre-mim">
+            <header>
+                <img src="https://github.com/alextiii/Portfolio-Alex-Christos/raw/main/foto%20perfil%20alex.jfif" alt="Sua Foto">
+                <h1>Alex Christos Simonis</h1>
+            </header>
+            <h2>Sobre Mim</h2>
+            <p>Sou graduado em Análise e Desenvolvimento de Sistemas e pós-graduando em Arquitetura e Governança de Dados. Com mais de 5 anos de experiência, desempenhei papéis como Analista de BI Júnior e Pleno, Analista de Banco de Dados, Supervisor de Planejamento/BI e Desenvolvedor WordPress.</p>
+            <p>Atualmente, sou Analista de BI Pleno 2, com responsabilidades que abrangem todo o ciclo de vida das soluções de BI, desde a criação das fontes de dados incluindo Arquitetura completa, tratamento de zero, automação e inteligência de dados até a administração do Gateway e a implementação em nuvem. Também exerço a função de líder interno no time de dados, colaborando com meu líder para otimizar processos, coordenar a equipe e garantir entregas de alta qualidade.</p>
+            <p><strong>Principal cliente:</strong> iFood</p>
+            <p>Atuo com a Trampay, o banco dos entregadores, tendo o privilégio de colaborar com o iFood, uma das maiores plataformas de delivery do Brasil.</p>
+            <p><strong>Principais responsabilidades com o cliente iFood:</strong></p>
+            <ul>
+                <li>Estruturo e automatizo processos relacionados à gestão de dados do cliente, garantindo a disponibilidade de informações para análise e demonstração de resultados.</li>
+                <li>Acompanho e gerencio todo o ciclo de dados dos motoboys e operadores logísticos com os quais trabalhamos.</li>
+                <li>Especializado na área de banking, proporcionando soluções que otimizam o relacionamento financeiro dos entregadores e parceiros logísticos.</li>
+            </ul>
         </section>
     </main>
+
+    <script>
+        document.getElementById("download-curriculo").addEventListener("click", function(event) {
+            event.preventDefault();
+            const link = document.createElement("a");
+            link.href = "https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/Curriculo%20Alex%20Christos%20Simonis%202025.pdf";
+            link.download = "Curriculo_Alex_Christos_Simonis_2025.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
 </body>
+
 </html>
