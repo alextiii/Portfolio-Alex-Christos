@@ -17,23 +17,31 @@
         }
 
         aside {
-            width: 15%;
+            width: 18%;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-right: 1px solid #333;
             position: fixed;
             height: 100vh;
-            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
-        aside div {
+        .contact-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            width: 100%;
             margin-bottom: 15px;
         }
 
-        aside button {
+        .contact-item i {
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        .copy-button {
             background-color: #3498db;
             color: white;
             border: none;
@@ -41,58 +49,60 @@
             cursor: pointer;
             border-radius: 5px;
             font-size: 0.9em;
+            margin-left: auto;
         }
 
-        aside button:hover {
+        .copy-button:hover {
             background-color: #2980b9;
         }
 
+        aside a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        aside a i {
+            margin-right: 10px;
+        }
+
+        .download-button {
+            background-color: #fafafffb;
+            color: #111111;
+            padding: 10px 35px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            font-family: 'Cursive', 'Brush Script MT', cursive;
+            margin-top: 10px;
+        }
+
+        .download-button:hover {
+            background-color: #c6c8c9;
+        }
+
         main {
-            margin-left: 15%;
+            margin-left: 20%;
             padding: 20px;
             flex-grow: 1;
-        }
-
-        header {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        header img {
-            border-radius: 10%;
-            width: 150px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        section {
-            max-width: 70%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-        }
-
-        section h2 {
-            color: #3498db;
         }
     </style>
 </head>
 
 <body>
     <aside>
-        <div>
+        <div class="contact-item">
             <i class="fa fa-envelope"></i>
-            <button onclick="copyToClipboard('Alexsimonis21@gmail.com')">Copiar</button>
+            <button class="copy-button" onclick="copyToClipboard('Alexsimonis21@gmail.com')">Copiar</button>
         </div>
-        <div>
+        <div class="contact-item">
             <i class="fa fa-phone"></i>
-            <button onclick="copyToClipboard('+5511958315173')">Copiar</button>
+            <button class="copy-button" onclick="copyToClipboard('+5511958315173')">Copiar</button>
         </div>
         <a href="https://www.linkedin.com/in/alex-christos-simonis-798026210" target="_blank">
             <i class="fa fa-linkedin"></i>LinkedIn
