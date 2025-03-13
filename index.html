@@ -17,91 +17,96 @@
         }
 
         aside {
-            width: 20%;
+            width: 15%;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-right: 1px solid #333;
             position: fixed;
             height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            overflow-y: auto;
         }
 
-        aside a, .copy-button, .download-button {
+        aside a {
             color: #fff;
             text-decoration: none;
-            margin: 10px 0;
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 90%;
-            padding: 10px;
-            background-color: #3498db;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+            margin-bottom: 15px;
         }
 
-        aside a:hover, .copy-button:hover, .download-button:hover {
-            background-color: #217dbb;
+        aside i {
+            margin-right: 10px;
         }
 
         main {
-            margin-left: 22%;
+            margin-left: 15%;
             padding: 20px;
             flex-grow: 1;
         }
 
-        section {
-            max-width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            text-align: justify;
+        header {
+            text-align: center;
+            padding: 50px 20px;
         }
 
-        h2, .highlight {
+        header img {
+            border-radius: 10%;
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            max-width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        section h2 {
             color: #3498db;
         }
 
-        ul {
-            padding-left: 20px;
+        .download-button {
+            background-color: #fafafffb;
+            color: #111111;
+            padding: 10px 35px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            font-family: 'Cursive', 'Brush Script MT', cursive;
+            margin-top: 5px;
         }
 
-        @media screen and (max-width: 768px) {
-            aside {
-                width: 100%;
-                height: auto;
-                position: relative;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                padding: 10px;
-            }
-            aside a, .copy-button, .download-button {
-                width: auto;
-                padding: 8px 15px;
-                font-size: 14px;
-            }
-            main {
-                margin-left: 0;
-                width: 95%;
-            }
-            section {
-                max-width: 100%;
-            }
+        .download-button:hover {
+            background-color: #c6c8c9;
         }
     </style>
 </head>
 
 <body>
     <aside>
-        <button class="copy-button" onclick="copyToClipboard('Alexsimonis21@gmail.com')"><i class="fa fa-envelope"></i> Copiar Email</button>
-        <button class="copy-button" onclick="copyToClipboard('+55 11 95831-5173')"><i class="fa fa-phone"></i> Copiar Telefone</button>
-        <a href="https://www.linkedin.com/in/alex-christos-simonis-798026210" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a>
-        <a href="https://www.instagram.com/alexsimoniss" target="_blank"><i class="fa fa-instagram"></i> Instagram</a>
+        <a href="mailto:Alexsimonis21@gmail.com">
+            <i class="fa fa-envelope"></i>Email: Alexsimonis21@gmail.com
+        </a>
+        <a href="tel:+5511958315173">
+            <i class="fa fa-phone"></i>Telefone: +55 11 95831-5173
+        </a>
+        <a href="https://www.linkedin.com/in/alex-christos-simonis-798026210" target="_blank">
+            <i class="fa fa-linkedin"></i>LinkedIn
+        </a>
+        <a href="https://www.instagram.com/alexsimoniss" target="_blank">
+            <i class="fa fa-instagram"></i>Instagram
+        </a>
         <a href="#" id="download-curriculo" class="download-button">Baixar Currículo</a>
     </aside>
 
@@ -114,9 +119,9 @@
             <h2>Sobre Mim</h2>
             <p>Sou graduado em Análise e Desenvolvimento de Sistemas e pós-graduando em Arquitetura e Governança de Dados. Com mais de 5 anos de experiência, desempenhei papéis como Analista de BI Júnior e Pleno, Analista de Banco de Dados, Supervisor de Planejamento/BI e Desenvolvedor WordPress.</p>
             <p>Atualmente, sou Analista de BI Pleno 2, com responsabilidades que abrangem todo o ciclo de vida das soluções de BI, desde a criação das fontes de dados incluindo Arquitetura completa, tratamento de zero, automação e inteligência de dados até a administração do Gateway e a implementação em nuvem. Também exerço a função de líder interno no time de dados, colaborando com meu líder para otimizar processos, coordenar a equipe e garantir entregas de alta qualidade.</p>
-            <p class="highlight"><strong>Principal cliente: iFood</strong></p>
+            <p><strong>Principal cliente:</strong> iFood</p>
             <p>Atuo com a Trampay, o banco dos entregadores, tendo o privilégio de colaborar com o iFood, uma das maiores plataformas de delivery do Brasil.</p>
-            <p class="highlight"><strong>Principais responsabilidades com o cliente iFood:</strong></p>
+            <p><strong>Principais responsabilidades com o cliente iFood:</strong></p>
             <ul>
                 <li>Estruturo e automatizo processos relacionados à gestão de dados do cliente, garantindo a disponibilidade de informações para análise e demonstração de resultados.</li>
                 <li>Acompanho e gerencio todo o ciclo de dados dos motoboys e operadores logísticos com os quais trabalhamos.</li>
@@ -126,14 +131,6 @@
     </main>
 
     <script>
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                alert('Copiado: ' + text);
-            }, function(err) {
-                console.error('Erro ao copiar: ', err);
-            });
-        }
-
         document.getElementById("download-curriculo").addEventListener("click", function(event) {
             event.preventDefault();
             const link = document.createElement("a");
@@ -145,4 +142,5 @@
         });
     </script>
 </body>
+
 </html>
