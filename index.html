@@ -41,6 +41,10 @@
             margin-right: 10px;
         }
 
+        .contact-item span {
+            flex-grow: 1;
+        }
+
         .copy-button {
             background-color: #3498db;
             color: white;
@@ -49,7 +53,6 @@
             cursor: pointer;
             border-radius: 5px;
             font-size: 0.9em;
-            margin-left: auto;
         }
 
         .copy-button:hover {
@@ -91,6 +94,13 @@
             padding: 20px;
             flex-grow: 1;
         }
+
+        header img {
+            border-radius: 10%;
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -98,10 +108,12 @@
     <aside>
         <div class="contact-item">
             <i class="fa fa-envelope"></i>
+            <span>E-mail</span>
             <button class="copy-button" onclick="copyToClipboard('Alexsimonis21@gmail.com')">Copiar</button>
         </div>
         <div class="contact-item">
             <i class="fa fa-phone"></i>
+            <span>Telefone</span>
             <button class="copy-button" onclick="copyToClipboard('+5511958315173')">Copiar</button>
         </div>
         <a href="https://www.linkedin.com/in/alex-christos-simonis-798026210" target="_blank">
