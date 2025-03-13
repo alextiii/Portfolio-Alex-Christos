@@ -27,6 +27,9 @@
             top: 0;
             left: 0;
             z-index: 1000;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         aside a {
@@ -34,6 +37,7 @@
             text-decoration: none;
             margin: 10px;
             display: inline-block;
+            font-size: 14px;
         }
 
         main {
@@ -61,6 +65,24 @@
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .download-button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .download-button:hover {
+            background-color: #217dbb;
         }
 
         @media screen and (max-width: 768px) {
@@ -68,8 +90,8 @@
                 flex-direction: column;
             }
             aside {
-                position: relative;
-                padding: 10px 0;
+                flex-direction: column;
+                align-items: center;
             }
             main {
                 width: 95%;
@@ -84,6 +106,7 @@
         <a href="tel:+5511958315173"><i class="fa fa-phone"></i> Telefone</a>
         <a href="https://www.linkedin.com/in/alex-christos-simonis-798026210" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a>
         <a href="https://www.instagram.com/alexsimoniss" target="_blank"><i class="fa fa-instagram"></i> Instagram</a>
+        <a href="#" id="download-curriculo" class="download-button">Baixar Currículo</a>
     </aside>
 
     <main>
@@ -96,5 +119,17 @@
             <p>Sou graduado em Análise e Desenvolvimento de Sistemas e pós-graduando em Arquitetura e Governança de Dados...</p>
         </section>
     </main>
+
+    <script>
+        document.getElementById("download-curriculo").addEventListener("click", function(event) {
+            event.preventDefault();
+            const link = document.createElement("a");
+            link.href = "https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/Curriculo%20Alex%20Christos%20Simonis%202025.pdf";
+            link.download = "Curriculo_Alex_Christos_Simonis_2025.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
 </body>
 </html>
