@@ -14,99 +14,83 @@
             background: url('https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/vecteezy_wave-of-particles-on-blue-background-abstract-technology_5411624.jpg') center/cover fixed no-repeat;
             color: #fff;
             display: flex;
+        }
+
+        aside {
+            width: 20%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-right: 1px solid #333;
+            position: fixed;
+            height: 100vh;
+            display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        aside {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        aside a, .copy-button {
+        aside a, .copy-button, .download-button {
             color: #fff;
             text-decoration: none;
-            margin: 10px;
-            display: inline-block;
-            font-size: 14px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-family: 'Arial', sans-serif;
-        }
-
-        aside .copy-button {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            padding: 10px;
             background-color: #3498db;
-            padding: 10px 15px;
             border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        aside .copy-button:hover {
+        aside a:hover, .copy-button:hover, .download-button:hover {
             background-color: #217dbb;
         }
 
         main {
-            width: 90%;
-            max-width: 1200px;
+            margin-left: 22%;
             padding: 20px;
-            margin-top: 70px;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px;
-        }
-
-        header img {
-            border-radius: 10%;
-            width: 120px;
-            height: auto;
-            margin-bottom: 15px;
+            flex-grow: 1;
         }
 
         section {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
+            max-width: 80%;
+            margin: 20px auto;
             padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            margin-bottom: 20px;
-            text-align: center;
+            text-align: justify;
         }
 
-        .download-button {
-            background-color: #3498db;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
-            display: inline-block;
-            margin-top: 10px;
+        h2, .highlight {
+            color: #3498db;
         }
 
-        .download-button:hover {
-            background-color: #217dbb;
+        ul {
+            padding-left: 20px;
         }
 
         @media screen and (max-width: 768px) {
             aside {
-                flex-direction: column;
-                align-items: center;
+                width: 100%;
+                height: auto;
+                position: relative;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 10px;
+            }
+            aside a, .copy-button, .download-button {
+                width: auto;
+                padding: 8px 15px;
+                font-size: 14px;
             }
             main {
+                margin-left: 0;
                 width: 95%;
+            }
+            section {
+                max-width: 100%;
             }
         }
     </style>
@@ -130,9 +114,9 @@
             <h2>Sobre Mim</h2>
             <p>Sou graduado em Análise e Desenvolvimento de Sistemas e pós-graduando em Arquitetura e Governança de Dados. Com mais de 5 anos de experiência, desempenhei papéis como Analista de BI Júnior e Pleno, Analista de Banco de Dados, Supervisor de Planejamento/BI e Desenvolvedor WordPress.</p>
             <p>Atualmente, sou Analista de BI Pleno 2, com responsabilidades que abrangem todo o ciclo de vida das soluções de BI, desde a criação das fontes de dados incluindo Arquitetura completa, tratamento de zero, automação e inteligência de dados até a administração do Gateway e a implementação em nuvem. Também exerço a função de líder interno no time de dados, colaborando com meu líder para otimizar processos, coordenar a equipe e garantir entregas de alta qualidade.</p>
-            <p><strong>Principal cliente:</strong> iFood</p>
+            <p class="highlight"><strong>Principal cliente: iFood</strong></p>
             <p>Atuo com a Trampay, o banco dos entregadores, tendo o privilégio de colaborar com o iFood, uma das maiores plataformas de delivery do Brasil.</p>
-            <p><strong>Principais responsabilidades com o cliente iFood:</strong></p>
+            <p class="highlight"><strong>Principais responsabilidades com o cliente iFood:</strong></p>
             <ul>
                 <li>Estruturo e automatizo processos relacionados à gestão de dados do cliente, garantindo a disponibilidade de informações para análise e demonstração de resultados.</li>
                 <li>Acompanho e gerencio todo o ciclo de dados dos motoboys e operadores logísticos com os quais trabalhamos.</li>
@@ -149,6 +133,16 @@
                 console.error('Erro ao copiar: ', err);
             });
         }
+
+        document.getElementById("download-curriculo").addEventListener("click", function(event) {
+            event.preventDefault();
+            const link = document.createElement("a");
+            link.href = "https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/Curriculo%20Alex%20Christos%20Simonis%202025.pdf";
+            link.download = "Curriculo_Alex_Christos_Simonis_2025.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
     </script>
 </body>
 </html>
