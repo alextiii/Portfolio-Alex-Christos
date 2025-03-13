@@ -14,100 +14,76 @@
             background: url('https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/vecteezy_wave-of-particles-on-blue-background-abstract-technology_5411624.jpg') center/cover fixed no-repeat;
             color: #fff;
             display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         aside {
-            width: 15%;
+            width: 100%;
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-right: 1px solid #333;
+            padding: 10px;
+            text-align: center;
             position: fixed;
-            height: 100vh;
-            overflow-y: auto;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         aside a {
             color: #fff;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        aside i {
-            margin-right: 10px;
+            margin: 10px;
+            display: inline-block;
         }
 
         main {
-            margin-left: 15%;
+            width: 90%;
+            max-width: 1200px;
             padding: 20px;
-            flex-grow: 1;
+            margin-top: 70px;
         }
 
         header {
             text-align: center;
-            padding: 50px 20px;
+            padding: 20px;
         }
 
         header img {
             border-radius: 10%;
-            width: 150px;
+            width: 120px;
             height: auto;
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 15px;
         }
 
         section {
-            max-width: 70%;
-            margin: 20px auto;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
+            margin-bottom: 20px;
         }
 
-        section h2 {
-            color: #3498db;
-        }
-
-        .download-button {
-            background-color: #fafafffb;
-            color: #111111;
-            padding: 10px 35px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-            font-family: 'Cursive', 'Brush Script MT', cursive;
-            margin-top: 5px;
-        }
-
-        .download-button:hover {
-            background-color: #c6c8c9;
+        @media screen and (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            aside {
+                position: relative;
+                padding: 10px 0;
+            }
+            main {
+                width: 95%;
+            }
         }
     </style>
 </head>
 
 <body>
     <aside>
-        <a href="mailto:Alexsimonis21@gmail.com">
-            <i class="fa fa-envelope"></i>Email: Alexsimonis21@gmail.com
-        </a>
-        <a href="tel:+5511958315173">
-            <i class="fa fa-phone"></i>Telefone: +55 11 95831-5173
-        </a>
-        <a href="https://www.linkedin.com/in/alex-christos-simonis-798026210" target="_blank">
-            <i class="fa fa-linkedin"></i>LinkedIn
-        </a>
-        <a href="https://www.instagram.com/alexsimoniss" target="_blank">
-            <i class="fa fa-instagram"></i>Instagram
-        </a>
-        <a href="#" id="download-curriculo" class="download-button">Baixar Currículo</a>
+        <a href="mailto:Alexsimonis21@gmail.com"><i class="fa fa-envelope"></i> Email</a>
+        <a href="tel:+5511958315173"><i class="fa fa-phone"></i> Telefone</a>
+        <a href="https://www.linkedin.com/in/alex-christos-simonis-798026210" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.instagram.com/alexsimoniss" target="_blank"><i class="fa fa-instagram"></i> Instagram</a>
     </aside>
 
     <main>
@@ -117,21 +93,8 @@
                 <h1>Alex Christos Simonis</h1>
             </header>
             <h2>Sobre Mim</h2>
-            <p>Sou um profissional de tecnologia com mais de 4 anos de experiência...</p>
+            <p>Sou graduado em Análise e Desenvolvimento de Sistemas e pós-graduando em Arquitetura e Governança de Dados...</p>
         </section>
     </main>
-
-    <script>
-        document.getElementById("download-curriculo").addEventListener("click", function(event) {
-            event.preventDefault(); // Evita que o link abra a página do GitHub
-            const link = document.createElement("a");
-            link.href = "https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/Curriculo%20Alex%20Christos%20Simonis%202025.pdf";
-            link.download = "Curriculo_Alex_Christos_Simonis_2025.pdf"; // Define o nome do arquivo
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
-    </script>
 </body>
-
 </html>
