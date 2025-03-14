@@ -26,55 +26,51 @@
             overflow-y: auto;
         }
 
-        .contact-title {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .contact-item i {
-            font-size: 1.2em;
-            margin-right: 10px;
-        }
-
-        .contact-item span {
-            flex-grow: 1;
-        }
-
-        .copy-button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            cursor: pointer;
-            border-radius: 30px;
-            font-size: 0.9em;
-            transition: background-color 0.3s ease;
-        }
-
-        .copy-button:hover {
-            background-color: #2980b9;
-        }
-
         aside a {
-            color: white;
+            color: #fff;
             text-decoration: none;
             display: flex;
             align-items: center;
-            margin: 20px 0;
+            margin-bottom: 15px;
         }
 
-        aside a i {
+        aside i {
             margin-right: 10px;
+        }
+
+        main {
+            margin-left: 15%;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header img {
+            border-radius: 10%;
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        section {
+            max-width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        section h2 {
+            color: #3498db;
         }
 
         .download-button {
@@ -88,34 +84,23 @@
             display: inline-block;
             transition: background-color 0.3s ease;
             font-family: 'Cursive', 'Brush Script MT', cursive;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         .download-button:hover {
             background-color: #c6c8c9;
-        }
-
-        main {
-            margin-left: 15%;
-            padding: 20px;
-            flex-grow: 1;
         }
     </style>
 </head>
 
 <body>
     <aside>
-        <div class="contact-title">Contatos</div>
-        <div class="contact-item">
-            <i class="fa fa-envelope"></i>
-            <span>E-mail</span>
-            <button class="copy-button" onclick="copyToClipboard('Alexsimonis21@gmail.com')">Copiar</button>
-        </div>
-        <div class="contact-item">
-            <i class="fa fa-phone"></i>
-            <span>Telefone</span>
-            <button class="copy-button" onclick="copyToClipboard('+5511958315173')">Copiar</button>
-        </div>
+        <a href="mailto:Alexsimonis21@gmail.com">
+            <i class="fa fa-envelope"></i>Email: Alexsimonis21@gmail.com
+        </a>
+        <a href="tel:+5511958315173">
+            <i class="fa fa-phone"></i>Telefone: +55 11 95831-5173
+        </a>
         <a href="https://www.linkedin.com/in/alex-christos-simonis-798026210" target="_blank">
             <i class="fa fa-linkedin"></i>LinkedIn
         </a>
@@ -126,7 +111,7 @@
     </aside>
 
     <main>
-       <section id="sobre-mim">
+        <section id="sobre-mim">
             <header>
                 <img src="https://github.com/alextiii/Portfolio-Alex-Christos/raw/main/foto%20perfil%20alex.jfif" alt="Sua Foto">
                 <h1>Alex Christos Simonis</h1>
@@ -144,17 +129,17 @@
             </ul>
         </section>
     </main>
-    
+
     <script>
-        function copyToClipboard(text) {
-            const textarea = document.createElement("textarea");
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand("copy");
-            document.body.removeChild(textarea);
-            alert("Copiado: " + text);
-        }
+        document.getElementById("download-curriculo").addEventListener("click", function(event) {
+            event.preventDefault();
+            const link = document.createElement("a");
+            link.href = "https://raw.githubusercontent.com/alextiii/Portfolio-Alex-Christos/main/Curriculo%20Alex%20Christos%20Simonis%202025.pdf";
+            link.download = "Curriculo_Alex_Christos_Simonis_2025.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
     </script>
 </body>
 
